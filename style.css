@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap');
+
+:root{
+  --sand:#efe6d8;
+  --shell:#f7f1e8;
+  --clay:#b98a5e;
+  --earth:#6b4f3a;
+  --bark:#3b2c22;
+  --sage:#8a9474;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--sand);
+  color:var(--bark);
+  font-family:'Courier Prime',monospace;
+  font-size:16px;
+  line-height:1.75;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+/* ---------- floating nav ---------- */
+.nav{
+  position:fixed;top:20px;left:50%;transform:translateX(-50%);
+  z-index:10;
+  display:flex;align-items:center;gap:28px;
+  padding:10px 26px;
+  background:rgba(247,241,232,.72);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1px solid rgba(107,79,58,.18);
+  border-radius:40px;
+  white-space:nowrap;
+}
+.nav .brand img{height:22px;width:auto}
+.nav ul{display:flex;gap:22px;list-style:none}
+.nav a{text-decoration:none;font-size:13px;letter-spacing:.14em;text-transform:lowercase}
+.nav a:hover,.nav a.active{color:var(--clay)}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;height:100vh;min-height:560px;
+  background:url('images/hero.jpg') center 35%/cover no-repeat;
+  display:flex;align-items:flex-end;justify-content:center;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(59,44,34,.05) 40%,rgba(59,44,34,.45));
+}
+.hero-title{position:relative;z-index:1;text-align:center;padding-bottom:9vh;color:var(--shell)}
+.hero-title img{width:min(560px,78vw);margin:0 auto 14px}
+.hero-title p{font-size:13px;letter-spacing:.3em;text-transform:lowercase}
+.scroll-cue{display:inline-block;margin-top:22px;font-size:20px;text-decoration:none;color:var(--shell);animation:drift 2.4s ease-in-out infinite}
+@keyframes drift{50%{transform:translateY(6px)}}
+
+/* ---------- sections ---------- */
+section{padding:110px 24px}
+.wrap{max-width:860px;margin:0 auto}
+.narrow{max-width:640px;margin:0 auto}
+h1,h2{
+  font-family:'Cormorant Garamond',serif;font-weight:300;
+  letter-spacing:.02em;line-height:1.15;color:var(--earth);
+}
+h1{font-size:clamp(42px,7vw,72px);margin-bottom:28px}
+h2{font-size:clamp(32px,5vw,48px);margin-bottom:22px}
+.eyebrow{font-size:12px;letter-spacing:.3em;text-transform:lowercase;color:var(--clay);margin-bottom:14px;display:block}
+p+p{margin-top:1.1em}
+.lead{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,3vw,28px);line-height:1.5;color:var(--earth)}
+.alt{background:var(--shell)}
+.center{text-align:center}
+
+.video{position:relative;padding-top:56.25%;border-radius:6px;overflow:hidden;box-shadow:0 18px 40px -20px rgba(59,44,34,.45)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+.offerings{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:36px;margin-top:40px}
+.offerings h3{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:24px;color:var(--earth);margin-bottom:6px}
+.offerings p{font-size:14px}
+
+.btn{
+  display:inline-block;margin-top:30px;padding:12px 28px;
+  border:1px solid var(--earth);border-radius:40px;
+  text-decoration:none;font-size:13px;letter-spacing:.18em;text-transform:lowercase;
+  transition:background .3s,color .3s;
+}
+.btn:hover{background:var(--earth);color:var(--shell)}
+
+/* ---------- inner pages ---------- */
+.page-head{padding-top:170px;padding-bottom:40px}
+.portrait{border-radius:200px 200px 6px 6px;aspect-ratio:4/5;object-fit:cover;object-position:62% center;margin-bottom:48px;max-width:380px}
+.split{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:start}
+@media(max-width:760px){.split{grid-template-columns:1fr}}
+
+form{display:grid;gap:18px;margin-top:30px}
+label{font-size:12px;letter-spacing:.2em;text-transform:lowercase;color:var(--earth)}
+input,select,textarea{
+  width:100%;margin-top:6px;padding:12px 4px;
+  font:inherit;color:var(--bark);
+  background:transparent;border:0;border-bottom:1px solid rgba(107,79,58,.4);
+}
+input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--clay)}
+textarea{min-height:130px;resize:vertical}
+form .btn{background:transparent;cursor:pointer;justify-self:start}
+
+/* ---------- footer ---------- */
+footer{padding:50px 24px;text-align:center;font-size:12px;letter-spacing:.2em;color:var(--earth);border-top:1px solid rgba(107,79,58,.15)}
+footer a{text-decoration:none;margin:0 10px}
+
+@media(max-width:560px){
+  .nav{gap:16px;padding:9px 18px;top:14px}
+  .nav ul{gap:14px}
+  .nav .brand{display:none}
+  section{padding:80px 20px}
+}
+
+/* ---------- social icons + contact buttons ---------- */
+.social{display:flex;justify-content:center;gap:22px;margin-bottom:16px}
+.social a{display:grid;place-items:center;width:40px;height:40px;border:1px solid rgba(107,79,58,.3);border-radius:50%;transition:background .3s,border-color .3s}
+.social svg{width:19px;height:19px;fill:none;stroke:var(--earth);stroke-width:1.5}
+.social svg .dot{fill:var(--earth);stroke:none}
+.social a:hover{background:var(--earth);border-color:var(--earth)}
+.social a:hover svg{stroke:var(--shell)}
+.social a:hover svg .dot{fill:var(--shell)}
+.actions{display:flex;flex-wrap:wrap;gap:14px}
+.actions .btn{margin-top:30px}
+
+/* ---------- embedded google form ---------- */
+.gform{margin-top:44px;background:var(--shell);border-radius:6px;overflow:hidden;box-shadow:0 18px 40px -24px rgba(59,44,34,.4)}
+.gform iframe{display:block;width:100%;height:1100px;border:0}
