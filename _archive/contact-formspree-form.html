@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>contact — oakviia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html"><img src="images/logo-black.png" alt="oakviia"></a>
+  <ul>
+    <li><a href="index.html">home</a></li>
+    <li><a href="about.html">about</a></li>
+    <li><a href="contact.html" class="active">contact</a></li>
+  </ul>
+</nav>
+
+<section class="page-head">
+  <div class="narrow">
+    <span class="eyebrow">contact</span>
+    <h1>let's make sound together</h1>
+    <p>For sound baths, workshops, residencies, collaborations, or simply to say hello — send a note below or write to <a href="mailto:hello@oakviia.com">hello@oakviia.com</a>.</p>
+
+    <!-- Free form handling: create a form at formspree.io and replace YOUR_FORM_ID -->
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <label>name<input type="text" name="name" required></label>
+      <label>email<input type="email" name="email" required></label>
+      <label>reason
+        <select name="reason">
+          <option>sound bath / workshop</option>
+          <option>residency or collaboration</option>
+          <option>science × art</option>
+          <option>something else</option>
+        </select>
+      </label>
+      <label>message<textarea name="message" required></textarea></label>
+      <button type="submit" class="btn">send</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <a href="https://www.youtube.com/watch?v=zPu4VquLxXg">youtube</a>
+  <a href="mailto:hello@oakviia.com">email</a>
+  <p style="margin-top:14px">© 2026 oakviia</p>
+</footer>
+
+</body>
+</html>
